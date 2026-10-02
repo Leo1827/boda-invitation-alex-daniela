@@ -1,0 +1,510 @@
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height: 90vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Title container */
+.title {
+  font-size: 2.8rem;
+  color: #333333d5;
+}
+
+/* Title */
+.title {
+  font-size: 2.4rem; /* text-2xl */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  margin-bottom: 0.5rem; /* mb-10 */
+  color: #2c3238;
+}
+
+.nameWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.initial {
+  font-size: 4rem; /* text-5xl */
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1;
+  margin-right: -0.25rem; /* -mr-1 */
+  color: #1f2429;
+}
+
+.ampersand {
+  font-size: 2.85rem; /* text-xl */
+  font-weight: 300;
+  margin-left: 0.55rem;
+  margin-right: 0.55rem; /* mx-1 */
+}
+
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+
+.envelope {
+  position: relative;
+
+  width: 600px;
+  height: 350px;
+
+  cursor: pointer;
+  user-select: none;
+
+  box-sizing: border-box;
+
+  /*
+   * La perspectiva debe estar en el contenedor
+   * que contiene la tapa.
+   */
+  perspective: 1800px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.base {
+  position: absolute;
+    
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  transform-style: preserve-3d;
+}
+
+.base img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  filter:
+    drop-shadow(
+      0 18px 25px rgba(0, 0, 0, 0.623)
+    );
+}
+
+
+/* =========================================================
+   TAPA
+   ========================================================= */
+
+.flap {
+  position: absolute;
+
+  /*
+   * La tapa empieza exactamente en el borde
+   * superior/trasero del sobre.
+   */
+  top: 0;
+  left: 50%;
+
+  width: 86%;
+  height: 276px;
+  filter:
+      drop-shadow(
+        0 18px 25px rgba(0, 0, 0, 0.322)
+      );
+  /*
+   * Solamente centramos horizontalmente.
+   */
+  transform: translateX(-50%);
+
+  /*
+   * ESTE ES EL PUNTO IMPORTANTE:
+   * la tapa gira desde su borde superior.
+   */
+  transform-origin: 50% 0%;
+
+  z-index: 40;
+
+  pointer-events: none;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   TAPA ABIERTA
+   ========================================================= */
+
+.flapOpen {
+  /*
+   * La tapa gira hacia atrás.
+   *
+   * NO usamos translateY porque eso hacía
+   * que pareciera desprenderse del sobre.
+   */
+  transform:
+    translateX(-50%)
+    rotateX(58deg);
+}
+
+
+/* =========================================================
+   CONTENIDO DE LA TAPA
+   ========================================================= */
+
+.flapInner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   IMAGEN DE LA TAPA
+   ========================================================= */
+
+.flapImage {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 20px 30px rgba(0, 0, 0, 0.10)
+    );
+
+  backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   SELLO
+   ========================================================= */
+
+.seal {
+  position: absolute;
+
+  left: 50%;
+  top: 60%;
+
+  z-index: 60;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    
+  filter:
+    drop-shadow(
+      0 20px 30px rgba(0, 0, 0, 0.37)
+    );
+}
+
+
+/* SELLO OCULTO */
+
+.sealHidden {
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.75);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENIDO SELLO
+   ========================================================= */
+
+.sealContent {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================================================
+   IMAGEN DEL SELLO
+   ========================================================= */
+
+.sealImage {
+  position: relative;
+
+  width: 160px;
+  height: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  filter:
+    drop-shadow(
+      0 12px 30px rgba(0, 0, 0, 0.22)
+    );
+}
+
+.sealImage img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.instruction {
+  margin-top: 8px;
+
+  padding: 6px 10px;
+
+  box-sizing: border-box;
+
+  background: rgba(250, 248, 245, 0.9);
+
+  border: 1px solid #e8dfd5;
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08);
+
+  color: #8c7a6b;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.45em;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.footerText{
+  margin-top: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.90rem;
+  font-weight: 400;
+
+  color: #2c3238;
+}
+
+/* =========================================================
+   TABLET Y MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding: 16px;
+  }
+
+  .initial {
+    font-size: 3.5rem; /* text-5xl */
+  }
+
+  .title {
+    font-size: 1.35rem; /* text-2xl */
+  }
+
+  .ampersand {
+    margin-left: 0.45rem;
+    margin-right: 0.45rem; /* mx-1 */
+    font-size: 2.0rem; /* text-xl */
+  }
+
+  /*
+   * Conservamos exactamente la proporción
+   * del sobre de escritorio:
+   *
+   * 600 / 350 = 1.714
+   */
+  .envelope {
+    width: min(92vw, 500px);
+    height: auto;
+
+    aspect-ratio: 600 / 350;
+
+    min-height: 0;
+  }
+
+  /*
+   * La tapa escala junto con el sobre.
+   */
+  .flap {
+    width: 84%;
+    height: 77%;
+  }
+
+  /*
+   * El sello también escala proporcionalmente.
+   */
+  .sealImage {
+    width: clamp(100px, 22vw, 135px);
+    height: clamp(100px, 22vw, 135px);
+  }
+
+}
+
+
+/* =========================================================
+   MÓVILES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 12px;
+  }
+
+  .envelope {
+    /*
+     * Nunca ocupa más que el ancho disponible.
+     */
+    width: calc(110vw - 24px);
+
+    /*
+     * La altura se calcula automáticamente
+     * respetando la proporción 600 / 350.
+     */
+    height: auto;
+
+    aspect-ratio: 600 / 350;
+  }
+
+  .flap {
+    width: 84%;
+    height: 77%;
+  }
+
+  .sealImage {
+    width: clamp(85px, 24vw, 110px);
+    height: clamp(85px, 24vw, 110px);
+  }
+
+  .instruction {
+    margin-top: 6px;
+
+    padding: 7px 14px;
+
+    font-size: clamp(7px, 2vw, 9px);
+
+    letter-spacing: clamp(0.18em, 0.8vw, 0.28em);
+  }
+
+}
+
+
+/* =========================================================
+   MÓVILES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .hero {
+    padding: 10px;
+  }
+
+  .envelope {
+    width: calc(110vw - 20px);
+
+    height: auto;
+
+    aspect-ratio: 600 / 350;
+  }
+
+  .flap {
+    width: 86%;
+    height: 78%;
+  }
+  .seal {
+    top: 62%;
+  }
+
+  .sealImage {
+    width: clamp(75px, 24vw, 90px);
+    height: clamp(80px, 24vw, 90px);
+  }
+
+  .instruction {
+    margin-top: 4px;
+
+    padding: 6px 10px;
+
+    font-size: clamp(6px, 2vw, 8px);
+
+    letter-spacing: clamp(0.16em, 0.7vw, 0.22em);
+  }
+
+}
+
+

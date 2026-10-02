@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+    :root {
+        --background: #ffffff;
+        --foreground: #171717;
+        --gold: #C5A880;
+        --gold-hover: #B3966E;
+        --dark: #0F0F0F;
+        --dark-lighter: #1A1A1A;
+        --muted: #8E8E8E;
+        --white: #FFFFFF;
+        --font-sans: 'Montserrat', sans-serif;
+        --font-serif: 'Playfair Display', serif;
+    }
+
+    /* Reset & Estilos Base */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Base / Dispositivos Móviles */
+    body {
+        font-family: 'Cormorant Garamond', serif;
+        background-image: url('./../public/envelope/fondo.jpeg');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll; /* En móvil funciona mejor 'scroll' para evitar saltos de renderizado */
+        color: #333333; /* Te recomiendo un tono oscuro para leer adecuadamente sobre el fondo de seda */
+        overflow-x: hidden;
+        line-height: 1.5;
+        min-height: 100vh;
+    }
+
+    /* Ajustes para Pantallas Grandes (Desktop) */
+    @media (min-width: 768px) {
+        body {
+            background-position: center center;
+            background-attachment: fixed; /* Mantiene la seda fija al hacer scroll en escritorio */
+        }
+    }
