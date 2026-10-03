@@ -6,7 +6,6 @@ import styles from "./Hero.module.css";
 
 import { Great_Vibes, Cinzel, Alex_Brush } from 'next/font/google';
 
-// Configuración de fuentes de Google optimizadas por Next.js
 const greatVibes = Great_Vibes({
   weight: '400',
   subsets: ['latin'],
@@ -28,10 +27,12 @@ export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
-  // 1. Leemos los parámetros de la URL
+  // 1. Obtener y decodificar el parámetro de la URL
   const searchParams = useSearchParams();
-  // Busca ?para=Lorena o ?invitado=Lorena o ?name=Lorena
-  const guestName = searchParams.get("para") || searchParams.get("invitado") || searchParams.get("name");
+  const rawGuestName = searchParams.get("para") || searchParams.get("invitado") || searchParams.get("name");
+  
+  // Decodificamos el texto para manejar espacios y caracteres especiales en producción
+  const guestName = rawGuestName ? decodeURIComponent(rawGuestName) : null;
 
   const handleOpen = () => {
     if (isOpen) return;
@@ -39,7 +40,6 @@ export default function Hero() {
     setIsOpen(true);
 
     setTimeout(() => {
-      // Si quieres pasar el nombre a la siguiente página (/invitation), puedes adjuntarlo también:
       const destination = guestName 
         ? `/invitation?para=${encodeURIComponent(guestName)}`
         : "/invitation";
@@ -52,7 +52,7 @@ export default function Hero() {
     <main className={styles.hero}>
       <div className={styles.container}>
 
-        {/* Título Principal: ALEX & DANIELA */}
+        {/* Título Principal */}
         <h1 className={`${styles.title}`}>
           <span className={styles.nameWrapper}>
             <span className={`${alexBrush.className} ${styles.initial}`}>
@@ -72,24 +72,14 @@ export default function Hero() {
         </h1>
 
         {/* SOBRE */}
-        <div
-          onClick={handleOpen}
-          className={styles.envelope}
-        >
+        <div onClick={handleOpen} className={styles.envelope}>
           {/* BASE */}
           <div className={styles.base}>
-            <img
-              src="/envelope/1_carta.png"
-              alt="Sobre"
-            />
+            <img src="/envelope/1_carta.png" alt="Sobre" />
           </div>
 
           {/* TAPA */}
-          <div
-            className={`${styles.flap} ${
-              isOpen ? styles.flapOpen : ""
-            }`}
-          >
+          <div className={`${styles.flap} ${isOpen ? styles.flapOpen : ""}`}>
             <div className={styles.flapInner}>
               <img
                 src="/envelope/2_hd_tapa.png"
@@ -100,29 +90,17 @@ export default function Hero() {
           </div>
 
           {/* SELLO */}
-          <div
-            className={`${styles.seal} ${
-              isOpen ? styles.sealHidden : ""
-            }`}
-          >
+          <div className={`${styles.seal} ${isOpen ? styles.sealHidden : ""}`}>
             <div className={styles.sealContent}>
-              {/* IMAGEN DEL SELLO */}
               <div className={styles.sealImage}>
-                <img
-                  src="/envelope/sello.png"
-                  alt="Sello"
-                />
+                <img src="/envelope/sello.png" alt="Sello" />
               </div>
-
-              {/* TEXTO */}
-              <div className={styles.instruction}>
-                Click para abrir
-              </div>
+              <div className={styles.instruction}>Click para abrir</div>
             </div>
           </div>
         </div>
 
-        {/* TEXTO DINÁMICO DE INVITADO EN EL FOOTER */}
+        {/* TEXTO INFERIOR CON EL NOMBRE DEL INVITADO */}
         <div className={styles.footerContainer}>
           {guestName && (
             <span className={styles.guestName}>
