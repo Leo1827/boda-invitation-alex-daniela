@@ -160,6 +160,7 @@
   .envelopeFront{
     margin-left: 29px;
   }
+
   .compositionWrapper {
     max-width: clamp(280px, 82vw, 360px);
     padding-top: 0;
@@ -198,7 +199,9 @@
 }
 
 @media (max-width: 380px) {
-
+  .envelopeFront{
+    margin-left: 27px;
+  }
   .subhead {
     font-size: 0.5rem;
     margin-top: 8px;
