@@ -12,6 +12,7 @@ export default function ConfirmarAsistencia() {
   const [acompanantes, setAcompanantes] = useState("");
   const [asistencia, setAsistencia] = useState<string>("");
   const [showModal, setShowModal] = useState(false);
+  const [waUrl, setWaUrl] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,16 +29,16 @@ export default function ConfirmarAsistencia() {
       `*Acompañantes:* ${acompanantes || "Ninguno"}\n` +
       `*¿Asistirá?:* ${confirmacionTexto}`;
 
-    // 3. Crear el enlace seguro de WhatsApp
-    const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(mensaje)}`;
+    // 3. Crear el enlace con api.whatsapp.com (más compatible con WebView y móviles)
+    const targetUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(mensaje)}`;
 
-    // 4. Mostrar la alerta elegante
+    setWaUrl(targetUrl);
     setShowModal(true);
 
-    // 5. Redirigir a WhatsApp después de una breve pausa para visualizar el aviso
+    // 4. Redireccionar directamente en la misma pestaña para evitar bloqueadores de Pop-ups
     setTimeout(() => {
-      window.open(whatsappUrl, "_blank");
-    }, 1500);
+      window.location.href = targetUrl;
+    }, 1200);
   };
 
   return (
@@ -50,6 +51,15 @@ export default function ConfirmarAsistencia() {
             <h3>¡Gracias por responder!</h3>
             <p>Te estamos redirigiendo a WhatsApp para enviar tu confirmación...</p>
             <div className={styles.modalSpinner} />
+
+            {/* Enlace de respaldo por si el navegador bloquea la redirección automática en móvil */}
+            <a
+              href={waUrl}
+              className={styles.modalFallbackBtn}
+              onClick={() => setShowModal(false)}
+            >
+              Si no abre automáticamente, haz clic aquí
+            </a>
           </div>
         </div>
       )}
