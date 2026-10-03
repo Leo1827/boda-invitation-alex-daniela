@@ -34,6 +34,10 @@
         min-height: 100vh;
     }
 
+    .colorBackground{
+          background: radial-gradient(circle at center, #fff 0%, #eaeaea 60%, #d8d8d8 100%);
+    }
+
     /* Ajustes para Pantallas Grandes (Desktop) */
     @media (min-width: 768px) {
         body {

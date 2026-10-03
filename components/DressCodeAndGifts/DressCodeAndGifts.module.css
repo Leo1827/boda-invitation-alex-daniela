@@ -1,0 +1,229 @@
+/* Importar tipografía elegante para las letras cursivas decorativas */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;500;600&display=swap');
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* Tamaño ideal para invitaciones móviles */
+  margin: 0 auto;
+  padding: 40px 16px;
+  padding-bottom: 80px; /* Espacio para el sello de cera */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+  font-family: 'Cinzel', serif, Georgia;
+  color: #2c3038;
+
+}
+
+/* ================= 1. DRESS CODE ================= */
+.dressCodeWrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+}
+
+/* Tarjeta superior de texto */
+.textCardTop {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 65%;
+  background: #ebd4d4;
+  padding: 24px 18px 30px 18px;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15));
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1;
+}
+
+.textFormal {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+
+.textDetail {
+  font-size: 0.75rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Tarjeta de ilustración (Abajo a la derecha) */
+.illustrationCard {
+  position: absolute;
+  top: 105px;
+  right: 5%;
+  width: 50%;
+  height: 250px;
+  background: #ffffff;
+  box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.85);
+}
+
+.imageCover {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Insignia / Badge "Dress Code" */
+.dressCodeBadge {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2b333e;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 4;
+}
+
+.cursiveBadge {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.2rem;
+  line-height: 0.8;
+  color: #f5f5f5;
+}
+
+.textBadge {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+/* Flores superiores */
+.floralTopRight {
+  position: absolute;
+  top: 280px;
+  right: -15px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ================= 2. REGALOS ================= */
+.giftsWrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 1px;
+  padding: 30px 30px 40px;
+}
+
+/* Sello de cera en la parte superior */
+.waxSeal {
+  position: absolute;
+  top: -58px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Tarjeta principal con el mensaje */
+.giftsCard {
+  background: #ebd4d4;
+  text-align: center;
+  padding: 10px 28px 35px 28px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.giftsMessage {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+  text-align: justify;
+  color: #2b333e;
+  margin: 0;
+  text-align-last: center;
+  margin-top: 10px;
+}
+
+
+/* Círculo oscuro "Regalos" */
+.giftsCircle {
+  position: absolute;
+  bottom: -45px;
+  right: 5%;
+  width: 140px;
+  height: 140px;
+  background: #323946;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 4;
+}
+
+.giftsCircleContent {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.cursiveGifts {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 3.2rem;
+  line-height: 0.8;
+}
+
+.textGifts {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-left: -2px;
+}
+
+/* Flores blancas inferiores */
+.floralBottomLeft {
+  position: absolute;
+  bottom: -40px;
+  left: 2%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ================= ADAPTACIÓN RESPONSIVE ================= */
+@media (max-width: 380px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .dressCodeBadge {
+    left: 22%;
+    padding: 8px 16px;
+  }
+
+  .giftsCircle {
+    width: 120px;
+    height: 120px;
+    bottom: -35px;
+  }
+
+  .cursiveGifts {
+    font-size: 2.6rem;
+  }
+
+  .textGifts {
+    font-size: 0.7rem;
+  }
+}
