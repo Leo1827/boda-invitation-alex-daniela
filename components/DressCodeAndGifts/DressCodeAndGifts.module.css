@@ -208,6 +208,7 @@
   pointer-events: none;
 }
 
+
 /* ================= ADAPTACIÓN RESPONSIVE ================= */
 @media (max-width: 380px) {
   .container {

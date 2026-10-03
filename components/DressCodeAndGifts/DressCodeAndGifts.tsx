@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './DressCodeAndGifts.module.css';
+import SobreIcono from '../Layout/SobreIcono';
 import { Great_Vibes } from 'next/font/google';
 const greatVibes = Great_Vibes({
   weight: '400',
@@ -26,7 +27,7 @@ export default function DressCodeAndGifts() {
         {/* Tarjeta con ilustración de vestuario */}
         <div className={styles.illustrationCard}>
           <Image
-            src="/envelope/photo2.jpg" // Reemplaza con tu imagen de la pareja
+            src="/envelope/photografyTwo.jpg" // Reemplaza con tu imagen de la pareja
             alt="Ilustración Dress Code"
             fill
             className={styles.imageCover}
@@ -78,8 +79,7 @@ export default function DressCodeAndGifts() {
         {/* Círculo oscuro flotante "Regalos" */}
         <div className={styles.giftsCircle}>
           <div className={styles.giftsCircleContent}>
-            <span className={`${styles.cursiveGifts} ${greatVibes.className}`}>R</span>
-            <span className={styles.textGifts}>EGALOS</span>
+            <SobreIcono size={100} color="#ebd4d4" fillColor="#1E293B" />
           </div>
         </div>
 

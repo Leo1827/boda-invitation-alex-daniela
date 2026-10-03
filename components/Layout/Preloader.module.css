@@ -1,0 +1,93 @@
+/* Contenedor principal con fondo overlay sutil */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF8F5; /* Color crema / marfil suave */
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Tarjeta central estática y limpia */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Spinner elegante de doble aro sobrio */
+.spinnerWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ringBase {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(197, 160, 89, 0.2); /* Tono dorado tenue */
+}
+
+.ringActive {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-top-color: #C5A059; /* Dorado principal */
+  border-right-color: #C5A059;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+/* Monograma o Iniciales al centro del spinner */
+.monogram {
+  font-family: var(--font-great-vibes), cursive, serif;
+  font-size: 1.5rem;
+  color: #2C3038;
+  user-select: none;
+}
+
+/* Texto de carga sobrio */
+.text {
+  font-family: serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #7A756B;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
