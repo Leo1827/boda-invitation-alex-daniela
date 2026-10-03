@@ -32,7 +32,7 @@ export default function DressCodeAndGifts() {
 
         {/* Insignia / Label flotante "Dress Code" */}
         <div className={styles.dressCodeBadge}>
-          <span className={styles.cursiveBadge}>D</span>
+          <span className={`${styles.cursiveBadge} ${greatVibes.className}`}>D</span>
           <span className={styles.textBadge}>RESS<br />CODE</span>
         </div>
 
@@ -53,10 +53,10 @@ export default function DressCodeAndGifts() {
         {/* Sello de cera en la parte superior central de la tarjeta */}
         <div className={styles.waxSeal}>
           <Image
-            src="/envelope/sello.png" // Reemplaza con la imagen del sello de cera
+            src="/envelope/sello2.png" // Reemplaza con la imagen del sello de cera
             alt="Sello de cera"
-            width={120}
-            height={105}
+            width={100}
+            height={100}
             style={{ objectFit: 'contain' }}
           />
         </div>
@@ -74,7 +74,7 @@ export default function DressCodeAndGifts() {
         {/* Círculo oscuro flotante "Regalos" */}
         <div className={styles.giftsCircle}>
           <div className={styles.giftsCircleContent}>
-            <span className={styles.cursiveGifts}>R</span>
+            <span className={`${styles.cursiveGifts} ${greatVibes.className}`}>R</span>
             <span className={styles.textGifts}>EGALOS</span>
           </div>
         </div>
@@ -82,10 +82,10 @@ export default function DressCodeAndGifts() {
         {/* Flores blancas inferiores (Lirios/Cactus) */}
         <div className={styles.floralBottomLeft}>
           <Image
-            src="/envelope/flores_blancas.png" // Reemplaza con la imagen de flores blancas
+            src="/envelope/flores2.png" // Reemplaza con la imagen de flores blancas
             alt="Flores blancas"
-            width={180}
-            height={180}
+            width={160}
+            height={160}
             style={{ objectFit: 'contain' }}
           />
         </div>

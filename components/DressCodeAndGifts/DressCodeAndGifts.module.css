@@ -5,9 +5,7 @@
   position: relative;
   width: 100%;
   max-width: 480px; /* Tamaño ideal para invitaciones móviles */
-  margin: 0 auto;
-  padding: 40px 16px;
-  padding-bottom: 80px; /* Espacio para el sello de cera */
+  margin: 0 auto; /* Espacio para el sello de cera */
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -86,7 +84,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.50);
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 4;
 }
@@ -110,7 +108,7 @@
 .floralTopRight {
   position: absolute;
   top: 280px;
-  right: -15px;
+  right: 0;
   z-index: 5;
   pointer-events: none;
 }
@@ -126,7 +124,7 @@
 /* Sello de cera en la parte superior */
 .waxSeal {
   position: absolute;
-  top: -58px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
@@ -154,6 +152,7 @@
   margin: 0;
   text-align-last: center;
   margin-top: 10px;
+  margin-right: 50px;
 }
 
 
@@ -162,14 +161,14 @@
   position: absolute;
   bottom: -45px;
   right: 5%;
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   background: #323946;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.85);
   z-index: 4;
 }
 
@@ -187,7 +186,7 @@
 }
 
 .textGifts {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
   font-weight: 500;
   margin-left: -2px;
@@ -196,8 +195,8 @@
 /* Flores blancas inferiores */
 .floralBottomLeft {
   position: absolute;
-  bottom: -40px;
-  left: 2%;
+  bottom: -160px;
+  left: 28%;
   z-index: 3;
   pointer-events: none;
 }
@@ -226,4 +225,12 @@
   .textGifts {
     font-size: 0.7rem;
   }
+
+/* Flores blancas inferiores */
+.floralBottomLeft {
+  position: absolute;
+  bottom: -160px;
+  left: 22%;
+}
+
 }
