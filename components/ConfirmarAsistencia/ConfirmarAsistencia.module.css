@@ -35,14 +35,14 @@
   position: relative;
   width: 100%;
   max-width: 440px;
-  margin-top: 80px; /* Ajuste respecto a la flor */
+  margin-top: 100px; /* Ajuste respecto a la flor */
   display: flex;
   justify-content: center;
 }
 
 /* Imagen Trasera del Sobre (Establece el tamaño físico del sándwich) */
 .envelopeBackImg {
-  margin-top: 50px;
+  margin-top: 140px;
   width: 100%;
   height: auto;
   display: block;
@@ -184,6 +184,7 @@
   height: auto;
   z-index: 4;
   pointer-events: none;
+  
 }
 
 /* 4. Pie de página */

@@ -60,6 +60,20 @@ export default function ConfirmarAsistencia() {
               </div>
 
               <div className={styles.formGroup}>
+                <label htmlFor="acompanantes" className={styles.label}>
+                  ¿Con cuántos acompañantes contaremos?:
+                </label>
+                <input
+                  id="nombre"
+                  type="text"
+                  className={styles.input}
+                  value={nombre}
+                  onChange={(e) => setNombre(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className={styles.formGroup}>
                 <label className={styles.label}>
                   ¿Podrás acompañarnos en nuestro gran día?
                 </label>
