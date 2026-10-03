@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Hero.module.css";
 
-import { Great_Vibes, Cinzel } from 'next/font/google';
+import { Great_Vibes, Cinzel, Alex_Brush } from 'next/font/google';
 
 // Configuración de fuentes de Google optimizadas por Next.js
 const greatVibes = Great_Vibes({
@@ -18,6 +18,13 @@ const cinzel = Cinzel({
   weight: ['400', '500', '600'],
   variable: '--font-cinzel',
 });
+
+
+const alexBrush = Alex_Brush({
+  weight: '400',
+  subsets: ['latin'],
+});
+
 
 export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,9 +45,9 @@ export default function Hero() {
       <div className={styles.container}>
 
       {/* Título Principal: JULIANA & ETHAN */}
-      <h1 className={`${cinzel.className} ${styles.title}`}>
+      <h1 className={`${styles.title}`}>
         <span className={styles.nameWrapper}>
-          <span className={`${greatVibes.className} ${styles.initial}`}>
+          <span className={`${alexBrush.className} ${styles.initial}`}>
             A
           </span>
           LEX

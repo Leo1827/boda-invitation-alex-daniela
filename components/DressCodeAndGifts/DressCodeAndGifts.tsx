@@ -13,7 +13,11 @@ export default function DressCodeAndGifts() {
       <div className={styles.dressCodeWrapper}>
         {/* Tarjeta de texto Dress Code */}
         <div className={styles.textCardTop}>
-          <p className={styles.textFormal}>FORMAL.</p>
+          <p className={styles.textFormal}>
+            <span className={`${styles.dropCap} ${greatVibes.className}`}>
+              F
+            </span>
+            ORMAL.</p>
           <p className={styles.textDetail}>
             No llevar trajes ni vestido blanco, rosado o palo rosa
           </p>

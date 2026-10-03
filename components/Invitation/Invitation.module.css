@@ -149,6 +149,9 @@
 
 .names {
   font-size: clamp(1.6rem, 4.5vh, 2.4rem);
+  font-variant-ligatures: none;
+  font-feature-settings: "calt" 0, "liga" 0;
+  text-transform: none;
   font-style: italic;
   font-weight: 400;
   line-height: 0.95;

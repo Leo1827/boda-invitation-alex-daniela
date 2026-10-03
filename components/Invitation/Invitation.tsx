@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import styles from './Invitation.module.css';
-import { Great_Vibes } from 'next/font/google';
+import { Great_Vibes, Alex_Brush } from 'next/font/google';
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
 const greatVibes = Great_Vibes({
   weight: '400',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
   variable: '--font-great-vibes',
+});
+
+const alexBrush = Alex_Brush({
+  weight: '400',
+  subsets: ['latin'],
 });
 
 export default function Invitation() {
@@ -81,7 +87,7 @@ export default function Invitation() {
               </p>
 
               <h1 className={`${greatVibes.className} ${styles.names}`}>
-                Alex
+                <span className={`${alexBrush.className}`}>A</span>lex
                 <span className={styles.ampersand}>&amp;</span>
                 Daniela
               </h1>

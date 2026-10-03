@@ -43,6 +43,13 @@
   margin: 0 0 6px 0;
 }
 
+.dropCap{
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  line-height: 1;
+}
+
 .textDetail {
   font-size: 0.75rem;
   color: #555;
