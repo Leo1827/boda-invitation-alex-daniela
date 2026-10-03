@@ -30,7 +30,28 @@
   width: 100%;
   aspect-ratio: 1 / 1.05;
   z-index: 1;
+}
+/* Base común para forzar un calce perfecto del 100% en ambas capas */
+
+.envelopeFront {
+  position: absolute !important;
+  margin-top: 46%;
+  margin-left: 38px;
+  width: 83% !important;
+  height: 52% !important;
+  object-fit: fill !important; /* Mantiene exactamente la misma escala de lienzo */
+}
+
+/* Imagen del fondo (2_carta.png) */
+.envelopeBack {
+  z-index: 1;
   filter: drop-shadow(0px 10px 18px rgba(0, 0, 0, 0.12));
+}
+
+/* Imagen frontal recortada (3_carta.png) */
+.envelopeFront {
+  z-index: 3; /* Queda por encima de la foto (z-index: 2) */
+  pointer-events: none;
 }
 
 .imageFit {
@@ -38,13 +59,34 @@
   filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.15));
 }
 
-/* 2. CONTENEDOR DE LA TARJETA (FIGURA) */
+/* 2. FOTOGRAFÍA SALIENDO DEL SOBRE */
+.photoWrapper {
+  position: absolute;
+  top: 20%; /* Ajusta si quieres que asome más o menos foto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  z-index: 2; /* Entre el fondo (1) y el frente (3) */
+  background: #ffffff;
+  padding: 4px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.photoFit {
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3. CONTENEDOR DE LA TARJETA (FIGURA) Y FLORES */
 .cardWrapper {
   position: relative;
   width: 86%;
   margin-top: -32%;
   margin-left: 14%;
-  z-index: 2;
+  z-index: 5; /* Z-INDEX ALTO: Se asegura de flotar por encima del sobre y la foto */
   filter: drop-shadow(0px 12px 22px rgba(0, 0, 0, 0.14));
 }
 
@@ -61,7 +103,7 @@
   left: -4%;
   width: 44%;
   aspect-ratio: 1 / 2.1;
-  z-index: 4;
+  z-index: 6;
   pointer-events: none;
   filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.15));
 }
@@ -115,9 +157,12 @@
 
 /* AJUSTES RESPONSIVOS PARA MÓVILES */
 @media (max-width: 600px) {
+  .envelopeFront{
+    margin-left: 29px;
+  }
   .compositionWrapper {
     max-width: clamp(280px, 82vw, 360px);
-    padding-top: 0; /* Removido el padding excesivo de 5rem */
+    padding-top: 0;
   }
 
   .cardWrapper {
@@ -136,7 +181,6 @@
   }
 }
 
-/* Dispositivos de altura baja (p. ej., iPhone SE, teléfonos pequeños o landscape) */
 @media (max-height: 380px) {
   .compositionWrapper {
     max-width: clamp(240px, 42vh, 300px);
@@ -150,9 +194,11 @@
   .details {
     margin-top: 0.3rem;
   }
+
 }
 
 @media (max-width: 380px) {
+
   .subhead {
     font-size: 0.5rem;
     margin-top: 8px;

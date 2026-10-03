@@ -1,35 +1,54 @@
 import Image from 'next/image';
 import styles from './Invitation.module.css';
-import { Great_Vibes, Cinzel } from 'next/font/google';
+import { Great_Vibes } from 'next/font/google';
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
-// Configuración de fuentes de Google optimizadas por Next.js
 const greatVibes = Great_Vibes({
-    weight: '400',
-    subsets: ['latin'],
-    variable: '--font-great-vibes',
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-great-vibes',
 });
 
 export default function Invitation() {
-
-
   return (
     <main className={styles.container}>
       <div className={styles.compositionWrapper}>
         
-        {/* 1. SOBRE AL FONDO */}
+        {/* 1. SOBRE AL FONDO Y PARTE DELANTERA */}
         <div className={styles.envelopeWrapper}>
+          {/* Fondo del sobre */}
           <Image
             src="/envelope/2_carta.png"
             alt="Sobre de invitación"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 460px"
-            className={styles.imageFit}
+            className={styles.envelopeBack}
+          />
+
+          {/* Fotografía (capa intermedia) */}
+          <div className={styles.photoWrapper}>
+            <Image
+              src="/envelope/photo3.jpg"
+              alt="Fotografía"
+              fill
+              sizes="(max-width: 768px) 50vw, 200px"
+              className={styles.photoFit}
+            />
+          </div>
+
+          {/* Frente del sobre (3_carta.png) */}
+          <Image
+            src="/envelope/3_carta.png"
+            alt="Frente del sobre"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 460px"
+            className={styles.envelopeFront}
           />
         </div>
 
-        {/* 2. TARJETA FIGURA Y FLORES */}
+        {/* 2. TARJETA PRINCIPAL Y FLORES */}
         <div className={styles.cardWrapper}>
           
           {/* FLORES (Capa superior izquierda) */}
@@ -79,8 +98,6 @@ export default function Invitation() {
         <MusicPlayer />
         
       </div>
-
-      
     </main>
   );
 }
