@@ -1,0 +1,206 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 3rem;
+  box-sizing: border-box;
+    background: radial-gradient(circle at center, #ffffff 0%, #eaeaea 60%, #d8d8d8 100%);
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: flex-end; /* Alinea la tarjeta a la derecha para dejar traslucir la foto a la izquierda */
+}
+
+/* PILA DE FOTOS POLAROID ATRÁS */
+.polaroidStack {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  width: 220px;
+  height: 250px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Polaroids con marco beige/blanco cálido */
+.polaroid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f6f2;
+  padding: 8px 8px 32px 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.polaroidInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #e5e5e5;
+  overflow: hidden;
+}
+
+/* Rotación exacta de las 3 capas polaroid */
+.polaroid1 {
+  transform: rotate(-16deg) translate(-12px, -8px);
+  z-index: 1;
+}
+
+.polaroid2 {
+  transform: rotate(-8deg) translate(-4px, -2px);
+  z-index: 2;
+}
+
+.polaroid3 {
+  transform: rotate(-3deg);
+  z-index: 3;
+}
+
+.imageFit {
+  object-fit: cover;
+}
+
+/* TARJETA CON CRISTAL TRASLÚCIDO (GLASSMORPHISM) */
+.card {
+  position: relative;
+  width: 82%; /* Ancho ajustado para mostrar la foto por la izquierda */
+  background: rgba(255, 255, 255, 0.795); /* Fondo semi-transparente */
+  backdrop-filter: blur(12px) saturate(120%); /* Efecto vidrio esmerilado */
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 2.2rem 1.2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+  z-index: 4; /* Sobre las fotos */
+  text-align: center;
+  color: #111111;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+}
+
+/* SECCIONES */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initial {
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-size: 2.5rem;
+  text-transform: none;
+  margin-right: 2px;
+  line-height: 0.7;
+  font-weight: 400;
+  color: #000000;
+}
+
+.placeName {
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+  color: #111111;
+  font-weight: 500;
+}
+
+.address {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #222222;
+  margin-bottom: 0.8rem;
+}
+
+.addressSymbol {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+/* BOTÓN DE UBICACIÓN */
+.locationBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem 1.1rem;
+  border: 1px solid #111111;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s ease;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.locationBtn:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.time {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #111111;
+  font-weight: 500;
+}
+
+.spacing {
+  margin-top: 1.8rem;
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 320px;
+  }
+
+  .polaroidStack {
+    width: 180px;
+    height: 210px;
+    top: -10px;
+    left: 8px;
+  }
+
+  .card {
+    width: 85%;
+    padding: 1.8rem 0.8rem;
+  }
+
+  .initial {
+    font-size: 2.1rem;
+  }
+
+  .title {
+    font-size: 1.05rem;
+  }
+
+  .placeName {
+    font-size: 0.8rem;
+  }
+
+  .address {
+    font-size: 0.68rem;
+  }
+}
