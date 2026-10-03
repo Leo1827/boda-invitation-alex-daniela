@@ -42,7 +42,7 @@
 
 /* Imagen Trasera del Sobre (Establece el tamaño físico del sándwich) */
 .envelopeBackImg {
-  margin-top: 20px;
+  margin-top: 50px;
   width: 100%;
   height: auto;
   display: block;
@@ -215,7 +215,7 @@
 @media (max-width: 380px) {
     .cardContainer{
         height: 100%;
-        width: 68%;
+        width: 65%;
     }
 
     .envelopeWrapper{
@@ -233,5 +233,11 @@
 
     .envelopeWrapper{
         margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 420px) {
+    .envelopeFront{
+        left: 32px;
     }
 }
