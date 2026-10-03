@@ -135,7 +135,7 @@ export default function ConfirmarAsistencia() {
         <h2>CON MUCHO CARIÑO,</h2>
         <p>
           AGRADECEREMOS NOS CONFIRME SU<br />
-          ASISTENCIA ANTES DEL 31 DE MARZO
+          ASISTENCIA
         </p>
       </div>
     </div>

@@ -65,9 +65,6 @@
   z-index: 3;
 }
 
-.imageFit {
-  object-fit: cover;
-}
 
 /* TARJETA CON CRISTAL TRASLÚCIDO (GLASSMORPHISM) */
 .card {

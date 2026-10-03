@@ -61,11 +61,11 @@
 /* 2. FOTOGRAFÍA SALIENDO DEL SOBRE */
 .photoWrapper {
   position: absolute;
-  top: 20%; /* Ajusta si quieres que asome más o menos foto */
+  top: 10%; /* Ajusta si quieres que asome más o menos foto */
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.4 / 2;
   z-index: 2; /* Entre el fondo (1) y el frente (3) */
   background: #e8d5b7;
   padding: 4px;

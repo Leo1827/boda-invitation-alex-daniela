@@ -66,7 +66,7 @@ export default function EventDetails({
           <div className={`${styles.polaroid} ${styles.polaroid3}`}>
             <div className={styles.polaroidInner}>
               <Image
-                src="/envelope/photo3.jpg"
+                src="/envelope/photografy.jpg"
                 alt="Pareja foto principal"
                 fill
                 priority

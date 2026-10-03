@@ -29,7 +29,7 @@ export default function Invitation() {
           {/* Fotografía (capa intermedia) */}
           <div className={styles.photoWrapper}>
             <Image
-              src="/envelope/photo3.jpg"
+              src="/envelope/photografy.jpg"
               alt="Fotografía"
               fill
               sizes="(max-width: 768px) 50vw, 200px"
