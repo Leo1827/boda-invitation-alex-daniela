@@ -212,11 +212,88 @@
   text-transform: uppercase;
 }
 
+/* Modal Overlay flotante para la alerta de confirmación */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modalContent {
+  background-color: #FAF8F5; /* Tono papel marfil */
+  border: 1px solid #C5A059;  /* Tono dorado */
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modalIcon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.modalContent h3 {
+  font-family: var(--font-great-vibes), cursive, serif;
+  font-size: 1.8rem;
+  color: #2C3038;
+  margin: 0;
+  font-weight: normal;
+}
+
+.modalContent p {
+  font-family: serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.modalSpinner {
+  width: 24px;
+  height: 24px;
+  margin-top: 0.5rem;
+  border: 2px solid rgba(197, 160, 89, 0.2);
+  border-top-color: #C5A059;
+  border-radius: 50%;
+  animation: modalSpin 0.8s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* RESPONSIVO MÓVIL */
 @media (max-width: 380px) {
     .cardContainer{
         height: 100%;
-        width: 65%;
+        width: 70%;
     }
 
     .envelopeWrapper{
@@ -224,7 +301,7 @@
     }
 
     .envelopeBackImg{
-        margin-top: 100px;
+        margin-top: 200px;
     }
 
     .envelopeFront{

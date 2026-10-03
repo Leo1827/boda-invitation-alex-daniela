@@ -32,7 +32,6 @@ export default function EventDetails({
   ceremonyTime = '04:00 pm',
   receptionPlace = 'Finca la Joséfina ',
   receptionAddress = '(Pantanos)',
-  receptionMapUrl = 'https://maps.google.com',
   receptionTime = '07:00 pm',
 }: EventDetailsProps) {
   return (
@@ -110,15 +109,6 @@ export default function EventDetails({
 
             <p className={styles.placeName}>{receptionPlace}</p>
             <p className={styles.address}>{receptionAddress}</p>
-
-            <a
-              href={receptionMapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.locationBtn}
-            >
-              UBICACIÓN
-            </a>
 
             <p className={styles.time}>HORA: {receptionTime}</p>
           </div>
