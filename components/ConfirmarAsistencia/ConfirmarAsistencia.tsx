@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./ConfirmarAsistencia.module.css";
 
 // NUMERO DE TELEFONO DE WHATSAPP (Incluye el código de país sin el signo +)
-const WHATSAPP_PHONE = "573023120469"; 
+const WHATSAPP_PHONE = "573153580230"; 
 
 export default function ConfirmarAsistencia() {
   const [nombre, setNombre] = useState("");
