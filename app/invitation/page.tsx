@@ -1,7 +1,9 @@
+import Invitation from "@/components/Invitation/Invitation";
+
 export default function InvitationPage() {
   return (
     <main>
-      <h1>Invitación</h1>
+      <Invitation />
     </main>
   );
 }

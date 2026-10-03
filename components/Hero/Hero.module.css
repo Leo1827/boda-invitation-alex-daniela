@@ -4,7 +4,13 @@
    ========================================================= */
 
 .hero {
-  min-height: 90vh;
+  background-image: url('../../public/envelope/fondo.jpeg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* En móvil funciona mejor 'scroll' para evitar saltos de renderizado */
+  
+  min-height: 100vh;
   width: 100%;
 
   display: flex;
@@ -142,7 +148,7 @@
   left: 50%;
 
   width: 86%;
-  height: 276px;
+  height: 274px;
   filter:
       drop-shadow(
         0 18px 25px rgba(0, 0, 0, 0.322)

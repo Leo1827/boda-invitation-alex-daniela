@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   // Configuración del favicon y accesos directos
   icons: {
     icon: "favicon.ico", // o "/icon.png"
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Nuestra Boda | Alex & Daniela",
