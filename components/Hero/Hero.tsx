@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./Hero.module.css";
 
 import { Great_Vibes, Cinzel, Alex_Brush } from 'next/font/google';
@@ -19,16 +19,19 @@ const cinzel = Cinzel({
   variable: '--font-cinzel',
 });
 
-
 const alexBrush = Alex_Brush({
   weight: '400',
   subsets: ['latin'],
 });
 
-
 export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+
+  // 1. Leemos los parámetros de la URL
+  const searchParams = useSearchParams();
+  // Busca ?para=Lorena o ?invitado=Lorena o ?name=Lorena
+  const guestName = searchParams.get("para") || searchParams.get("invitado") || searchParams.get("name");
 
   const handleOpen = () => {
     if (isOpen) return;
@@ -36,7 +39,12 @@ export default function Hero() {
     setIsOpen(true);
 
     setTimeout(() => {
-      router.push("/invitation");
+      // Si quieres pasar el nombre a la siguiente página (/invitation), puedes adjuntarlo también:
+      const destination = guestName 
+        ? `/invitation?para=${encodeURIComponent(guestName)}`
+        : "/invitation";
+        
+      router.push(destination);
     }, 500);
   };
 
@@ -44,31 +52,30 @@ export default function Hero() {
     <main className={styles.hero}>
       <div className={styles.container}>
 
-      {/* Título Principal: JULIANA & ETHAN */}
-      <h1 className={`${styles.title}`}>
-        <span className={styles.nameWrapper}>
-          <span className={`${alexBrush.className} ${styles.initial}`}>
-            A
+        {/* Título Principal: ALEX & DANIELA */}
+        <h1 className={`${styles.title}`}>
+          <span className={styles.nameWrapper}>
+            <span className={`${alexBrush.className} ${styles.initial}`}>
+              A
+            </span>
+            LEX
           </span>
-          LEX
-        </span>
 
-        <span className={styles.ampersand}>&amp;</span>
+          <span className={styles.ampersand}>&amp;</span>
 
-        <span className={styles.nameWrapper}>
-          <span className={`${greatVibes.className} ${styles.initial}`}>
-            D
+          <span className={styles.nameWrapper}>
+            <span className={`${greatVibes.className} ${styles.initial}`}>
+              D
+            </span>
+            aniela
           </span>
-          aniela
-        </span>
-      </h1>
+        </h1>
 
         {/* SOBRE */}
         <div
           onClick={handleOpen}
           className={styles.envelope}
         >
-
           {/* BASE */}
           <div className={styles.base}>
             <img
@@ -84,13 +91,11 @@ export default function Hero() {
             }`}
           >
             <div className={styles.flapInner}>
-
               <img
                 src="/envelope/2_hd_tapa.png"
                 alt="Tapa del sobre"
                 className={styles.flapImage}
               />
-
             </div>
           </div>
 
@@ -101,7 +106,6 @@ export default function Hero() {
             }`}
           >
             <div className={styles.sealContent}>
-
               {/* IMAGEN DEL SELLO */}
               <div className={styles.sealImage}>
                 <img
@@ -114,16 +118,23 @@ export default function Hero() {
               <div className={styles.instruction}>
                 Click para abrir
               </div>
-
             </div>
           </div>
-
         </div>
+
+        {/* TEXTO DINÁMICO DE INVITADO EN EL FOOTER */}
+        <div className={styles.footerContainer}>
+          {guestName && (
+            <span className={styles.guestName}>
+              Especialmente para: {guestName}
+            </span>
+          )}
           <span className={styles.footerText}>
             Hemos reservado este espacio para ti.
-        </span>
+          </span>
+        </div>
+
       </div>
     </main>
   );
 }
-
