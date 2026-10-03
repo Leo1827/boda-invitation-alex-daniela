@@ -8,7 +8,7 @@ const greatVibes = Great_Vibes({
 });
 export default function DressCodeAndGifts() {
   return (
-    <section className={styles.container}>
+    <section className={styles.containerDress}>
       {/* ================= SECCIÓN SUPERIOR: DRESS CODE ================= */}
       <div className={styles.dressCodeWrapper}>
         {/* Tarjeta de texto Dress Code */}

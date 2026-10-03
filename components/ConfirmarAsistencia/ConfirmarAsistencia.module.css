@@ -1,0 +1,237 @@
+/* ===================================================
+   CONTAINER PRINCIPAL
+   =================================================== */
+.containerEvent {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 100px 12px 40px 12px;
+  box-sizing: border-box;
+}
+
+/* 1. Flor (capa 1) */
+.flowerBg {
+  position: absolute;
+  top: -50;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  max-width: 380px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  rotate: 120deg;
+}
+
+/* ===================================================
+   WRAPPER DEL SOBRE (Mantiene el aspecto responsivo perfecto)
+   =================================================== */
+.envelopeWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin-top: 80px; /* Ajuste respecto a la flor */
+  display: flex;
+  justify-content: center;
+}
+
+/* Imagen Trasera del Sobre (Establece el tamaño físico del sándwich) */
+.envelopeBackImg {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 2. Carta con Formulario (Superpuesta en el centro) */
+.cardContainer {
+  position: absolute;
+  top: -40px; /* Hace que la carta sobresalga por arriba del sobre */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 60%; /* Mantiene la carta dentro de los límites del sobre */
+  max-width: 340px;
+  background-color: #fcfcfc;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.015),
+    rgba(0, 0, 0, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 16px 12px 100px 12px; /* Bottom padding amplio para no tapar los botones */
+  box-sizing: border-box;
+  max-height: 115%; /* Controla la altura para no desbordar el sobre hacia abajo */
+  overflow-y: auto; /* Permite scroll interno si la pantalla es extremadamente pequeña */
+}
+
+.cardBorder {
+  border: 1px solid #2c3038;
+  border-radius: 12px;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: serif;
+  font-size: clamp(1rem, 3.8vw, 1.3rem);
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.formGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-family: serif;
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  color: #2c2c2c;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.radioOption {
+  width: 100%;
+  background-color: #e5e5e5;
+  border-radius: 6px;
+  padding: 8px 8px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.radioOption:hover {
+  background-color: #dadada;
+}
+
+.radioInput {
+  margin-right: 8px;
+  accent-color: #6b7c96;
+  flex-shrink: 0;
+}
+
+.radioText {
+  font-family: serif;
+  font-size: clamp(0.7rem, 2.2vw, 0.8rem);
+  color: #222;
+  text-align: left;
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 6px;
+  background-color: #7284a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  font-family: serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #5d6e8f;
+}
+
+.disclaimer {
+  font-size: 0.6rem;
+  color: #777;
+  margin-top: 6px;
+}
+
+/* 3. Parte frontal del sobre (Capa superior anclada abajo) */
+.envelopeFront {
+  position: absolute;
+  bottom: 20px;
+  left: 38px;
+  width: 83%;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* 4. Pie de página */
+.footerText {
+  position: relative;
+  z-index: 5;
+  margin-top: 24px;
+  text-align: center;
+  font-family: serif;
+  color: #1a1a1a;
+  padding: 0 16px;
+}
+
+.footerText h2 {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.footerText p {
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 380px) {
+    .cardContainer{
+        height: 100%;
+        width: 68%;
+    }
+
+    .envelopeWrapper{
+        margin-top: 150px;
+    }
+
+    .envelopeBackImg{
+        margin-top: 100px;
+    }
+
+    .envelopeFront{
+        bottom: 10pxpx;
+        left: 32px;
+    }
+
+    .envelopeWrapper{
+        margin-bottom: 0px;
+    }
+}

@@ -87,7 +87,7 @@ export default function Invitation() {
               </h1>
 
               <div className={styles.details}>
-                <p>Ciudad de Ibagué, Tolima</p>
+                <p>Suaza, Huila</p>
                 <p>28.11.2026</p>
               </div>
             </div>
