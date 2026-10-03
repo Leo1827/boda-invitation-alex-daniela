@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './Invitation.module.css';
 import { Great_Vibes, Cinzel } from 'next/font/google';
+import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
 // Configuración de fuentes de Google optimizadas por Next.js
 const greatVibes = Great_Vibes({
@@ -74,8 +75,12 @@ export default function Invitation() {
           </div>
 
         </div>
-
+        
+        <MusicPlayer />
+        
       </div>
+
+      
     </main>
   );
 }

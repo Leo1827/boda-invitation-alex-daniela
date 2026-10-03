@@ -1,0 +1,125 @@
+.playerContainer {
+  width: 100%;
+  max-width: 360px;
+  margin: 1.5rem auto 0.2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  padding: 0 1rem;
+}
+
+/* Título superior */
+.title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: #3b2828;
+  margin-bottom: 0.9rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Contenedor de la barra de progreso */
+.progressContainer {
+  position: relative;
+  width: 50%;
+  max-width: 240px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* Línea base del reproductor */
+.progressBarTrack {
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background-color: #2c2c2c;
+  border-radius: 1px;
+}
+
+/* Punto indicador (thumb) */
+.progressThumb {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  transition: left 0.1s linear;
+}
+
+/* Input oculto pero interactivo sobre toda la barra */
+.rangeInput {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Controles de reproducción */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.controlBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+}
+
+.controlBtn:hover {
+  opacity: 0.7;
+}
+
+.controlBtn:active {
+  transform: scale(0.92);
+}
+
+/* Botón principal de Play / Pause */
+.playBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+}
+
+/* Botones secundarios (Prev / Next) */
+.navBtn {
+  color: #1a1a1a;
+
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 480px) {
+
+  .title {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
+  
+  .progressContainer {
+    max-width: 200px;
+  }
+}
