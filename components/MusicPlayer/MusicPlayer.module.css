@@ -123,3 +123,9 @@
     max-width: 200px;
   }
 }
+
+@media (max-width: 380px) {
+  .playerContainer {
+    padding-bottom: 8rem;
+  } 
+}

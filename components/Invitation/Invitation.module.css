@@ -118,6 +118,7 @@
 @media (max-width: 600px) {
   .compositionWrapper {
     max-width: clamp(260px, 45vh, 340px);
+    padding-top: 5rem;
   }
 
   .cardWrapper {
@@ -133,6 +134,7 @@
 
 /* Dispositivos de pantalla vertical baja (móviles horizontales o pantallas pequeñas) */
 @media (max-height: 650px) {
+
   .compositionWrapper {
     max-width: 270px;
   }
