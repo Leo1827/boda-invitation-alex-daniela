@@ -20,7 +20,7 @@ export default function DressCodeAndGifts() {
             </span>
             ORMAL.</p>
           <p className={styles.textDetail}>
-            No llevar trajes ni vestido blanco, rosado o palo rosa
+            No llevar trajes ni vestido blanco, rosado o lila
           </p>
         </div>
 

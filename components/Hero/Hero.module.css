@@ -9,7 +9,7 @@
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: scroll; /* En móvil funciona mejor 'scroll' para evitar saltos de renderizado */
-  
+  filter: hue-rotate(250deg) saturate(1.2) brightness(0.98);
   min-height: 100vh;
   width: 100%;
 
@@ -253,9 +253,7 @@
   transition:
     opacity 0.8s ease,
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    
-  filter:
-    drop-shadow(
+    filter: hue-rotate(80deg) saturate(1.4) brightness(0.98) drop-shadow(
       0 20px 30px rgba(0, 0, 0, 0.37)
     );
 }

@@ -48,6 +48,7 @@
   display: block;
   z-index: 2;
   pointer-events: none;
+  filter: hue-rotate(250deg) saturate(1.2) brightness(0.98);
 }
 
 /* 2. Carta con Formulario (Superpuesta en el centro) */
@@ -184,7 +185,7 @@
   height: auto;
   z-index: 4;
   pointer-events: none;
-  
+  filter: hue-rotate(250deg) saturate(1.2) brightness(0.98);
 }
 
 /* 4. Pie de página */

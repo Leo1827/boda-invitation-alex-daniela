@@ -51,8 +51,8 @@
   inset: 0;
   border-radius: 50%;
   border: 1.5px solid transparent;
-  border-top-color: #C5A059; /* Dorado principal */
-  border-right-color: #C5A059;
+  border-top-color: #A292BF; /* Dorado principal */
+  border-right-color: #A292BF;
   animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
